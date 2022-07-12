@@ -1,0 +1,20 @@
+<html>
+<div id="lightning-data"></div>
+<script src="https://kingstonareataxicommission--dev1.sandbox.my.site.com/portal/lightning/lightning.out.js"></script>
+<script>
+  $Lightning.use(
+    'c:searchAccountsByPlateNumberApp', // name of the Lightning app
+    function() { // Callback once framework and app loaded
+      $Lightning.createComponent(
+         'c:searchAccountsByPlateNumber', // top-level component of your app
+          { }, // attributes to set on the component when created
+          'lightning-data', // the DOM location to insert the component
+          function(cmp) {
+            console.log("component was created");
+          }
+      );
+    },
+    'https://kingstonareataxicommission--dev1.sandbox.my.site.com/portal' // Community endpoint
+  );
+</script>
+</html>
