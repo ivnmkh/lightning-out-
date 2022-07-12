@@ -1,7 +1,8 @@
 <html>
 
      <div>1</div>
-      <div id="lightning-data"></div>
+      <div id="lightning-data-plate-number"></div>
+     <div id="lightning-data-badge-number"></div>
 
 <script src="https://kingstonareataxicommission--dev1.sandbox.my.site.com/portal/lightning/lightning.out.js"></script>
 <script>
@@ -11,7 +12,21 @@
       $Lightning.createComponent(
          'c:searchAccountsByPlateNumber', // top-level component of your app
           { }, // attributes to set on the component when created
-          'lightning-data', // the DOM location to insert the component
+          'lightning-data-plate-number', // the DOM location to insert the component
+          function(cmp) {
+            console.log("component was created");
+          }
+      );
+    },
+    'https://kingstonareataxicommission--dev1.sandbox.my.site.com/portal' // Community endpoint
+  );
+  $Lightning.use(
+    'c:searchContactsByBadgeNumberApp', // name of the Lightning app
+    function() { // Callback once framework and app loaded
+      $Lightning.createComponent(
+         'c:searchContactsByBadgeNumber', // top-level component of your app
+          { }, // attributes to set on the component when created
+          'lightning-data-badge-number', // the DOM location to insert the component
           function(cmp) {
             console.log("component was created");
           }
