@@ -2,7 +2,9 @@
 <body>
 
      <div>1</div>
-      <div id="lightning-data"></div>
+     <div id="lightning-data-plate-num"></div>
+     <div>2</div>
+     <div id="lightning-data-badge-num"></div>
 
 <script src="https://kingstonareataxicommission--dev1.sandbox.my.site.com/portal/lightning/lightning.out.js"></script>
 <script>
@@ -12,9 +14,9 @@
       $Lightning.createComponent(
          'c:searchAccountsByPlateNumber', // top-level component of your app
           { }, // attributes to set on the component when created
-          'lightning-data', // the DOM location to insert the component
+          'lightning-data-plate-num', // the DOM location to insert the component
           function(cmp) {
-            console.log("component was created");
+            console.log("component searchAccountsByPlateNumber was created");
           }
       );
     },
@@ -22,4 +24,22 @@
   );
 </script>
 </body>
+     <footer>
+          <script>
+            $Lightning.use(
+              'c:searchContactsByBadgeNumberApp', // name of the Lightning app
+              function() { // Callback once framework and app loaded
+                $Lightning.createComponent(
+                   'c:searchContactsByBadgeNumber', // top-level component of your app
+                    { }, // attributes to set on the component when created
+                    'lightning-data-badge-num', // the DOM location to insert the component
+                    function(cmp) {
+                      console.log("component searchContactsByBadgeNumber was created");
+                    }
+                );
+              },
+              'https://kingstonareataxicommission--dev1.sandbox.my.site.com/portal' // Community endpoint
+            );
+          </script>
+     </footer>
 </html>
