@@ -19,27 +19,18 @@
             console.log("component searchAccountsByPlateNumber was created");
           }
       );
+     $Lightning.createComponent(
+         'c:searchContactsByBadgeNumber', // top-level component of your app
+          { }, // attributes to set on the component when created
+          'lightning-data-badge-num', // the DOM location to insert the component
+          function(cmp) {
+            console.log("component searchContactsByBadgeNumber was created");
+          }
+      );
+        
     },
     'https://kingstonareataxicommission--dev1.sandbox.my.site.com/portal' // Community endpoint
   );
 </script>
 </body>
-     <footer>
-          <script>
-            $Lightning.use(
-              'c:searchContactsByBadgeNumberApp', // name of the Lightning app
-              function() { // Callback once framework and app loaded
-                $Lightning.createComponent(
-                   'c:searchContactsByBadgeNumber', // top-level component of your app
-                    { }, // attributes to set on the component when created
-                    'lightning-data-badge-num', // the DOM location to insert the component
-                    function(cmp) {
-                      console.log("component searchContactsByBadgeNumber was created");
-                    }
-                );
-              },
-              'https://kingstonareataxicommission--dev1.sandbox.my.site.com/portal' // Community endpoint
-            );
-          </script>
-     </footer>
 </html>
