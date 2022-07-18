@@ -1,1 +1,111 @@
+<script>
+    function addStyleTag() {
+        let createdStyleTag = document.createElement("style");
+        createdStyleTag.textContent = "@-webkit-keyframes spin{" +
+            "0% { transform: rotate(0deg); }" +
+            "100% { transform: rotate(360deg); }" +
+            "}" + " @-khtml-keyframes spin{" +
+            "0% { transform: rotate(0deg); }" +
+            "100% { transform: rotate(360deg); }" +
+            "}" + " @-moz-keyframes spin{" +
+            "0% { transform: rotate(0deg); }" +
+            "100% { transform: rotate(360deg); }" +
+            "}" + " @-ms-keyframes spin{" +
+            "0% { transform: rotate(0deg); }" +
+            "100% { transform: rotate(360deg); }" +
+            "}" + " @-o-keyframes spin{" +
+            "0% { transform: rotate(0deg); }" +
+            "100% { transform: rotate(360deg); }" +
+            "}";
+        document.head.appendChild(createdStyleTag);
+    }
 
+    function createSpinner(containerId, spinnerId) {
+        const container = document.getElementById(containerId);
+        const spinnerContainer = document.createElement('div');
+        spinnerContainer.setAttribute('id', spinnerId);
+        spinnerContainer.style.height = '160px';
+        const spinner = document.createElement('div');
+        spinner.style.width = '120px';
+        spinner.style.height = '120px';
+        spinner.style.border = '16px solid #f3f3f3';
+        spinner.style.borderTop = '16px solid #3498db';
+        spinner.style.borderRadius = '50%';
+        spinner.style.margin = '20px auto';
+        spinner.style.animation = 'spin 2s linear infinite';
+        spinnerContainer.appendChild(spinner);
+        container.appendChild(spinnerContainer);
+    }
+
+    addStyleTag();
+</script>
+
+<script src="https://gozenlo.force.com/zenlo/lightning/lightning.out.js"></script>
+
+<div id="LightningMortgageRateContainer"></div>
+
+<script>
+    createSpinner('LightningMortgageRateContainer', 'MortgageRateSpinner');
+    $Lightning.use("c:Embedded_Pages", function () {
+            $Lightning.createComponent("c:todayMortgageRates", {}, "LightningMortgageRateContainer", function (cmp) {
+                document.getElementById('MortgageRateSpinner').style.display = 'none';
+            });
+        }, "https://gozenlo.force.com/zenlo"
+    );
+</script>
+
+<script>
+    function addStyleTag() {
+        let createdStyleTag = document.createElement("style");
+        createdStyleTag.textContent = "@-webkit-keyframes spin{" +
+            "0% { transform: rotate(0deg); }" +
+            "100% { transform: rotate(360deg); }" +
+            "}" + " @-khtml-keyframes spin{" +
+            "0% { transform: rotate(0deg); }" +
+            "100% { transform: rotate(360deg); }" +
+            "}" + " @-moz-keyframes spin{" +
+            "0% { transform: rotate(0deg); }" +
+            "100% { transform: rotate(360deg); }" +
+            "}" + " @-ms-keyframes spin{" +
+            "0% { transform: rotate(0deg); }" +
+            "100% { transform: rotate(360deg); }" +
+            "}" + " @-o-keyframes spin{" +
+            "0% { transform: rotate(0deg); }" +
+            "100% { transform: rotate(360deg); }" +
+            "}";
+        document.head.appendChild(createdStyleTag);
+    }
+
+    function createSpinner(containerId, spinnerId) {
+        const container = document.getElementById(containerId);
+        const spinnerContainer = document.createElement('div');
+        spinnerContainer.setAttribute('id', spinnerId);
+        spinnerContainer.style.height = '160px';
+        const spinner = document.createElement('div');
+        spinner.style.width = '120px';
+        spinner.style.height = '120px';
+        spinner.style.border = '16px solid #f3f3f3';
+        spinner.style.borderTop = '16px solid #3498db';
+        spinner.style.borderRadius = '50%';
+        spinner.style.margin = '20px auto';
+        spinner.style.animation = 'spin 2s linear infinite';
+        spinnerContainer.appendChild(spinner);
+        container.appendChild(spinnerContainer);
+    }
+
+    addStyleTag();
+</script>
+
+<script src="https://gozenlo.force.com/zenlo/lightning/lightning.out.js"></script>
+
+<div id="LightningMortgageCalculatorContainer"></div>
+
+<script>
+    createSpinner('LightningMortgageCalculatorContainer', 'MortgageCalculatorSpinner');
+    $Lightning.use("c:Embedded_Pages", function () {
+            $Lightning.createComponent("c:embeddedMortgageCalculator", {}, "LightningMortgageCalculatorContainer", function (cmp) {
+                document.getElementById('MortgageCalculatorSpinner').style.display = 'none';
+            });
+        }, "https://gozenlo.force.com/zenlo"
+    );
+</script>
